@@ -19,15 +19,13 @@
     <script src="angular-1.6.4/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="controllers/controllerMain.js"></script>
+    <script src="directives/minhasDirectivas.js"></script>
 
   </head>
   <body>
     <h1>{{mensagem}}</h1>
 
-    <div class="panel panel-default">
-    <!-- Default panel contents -->
-      <div class="panel-heading">{{tituloPainel}}</div>
-
+    <meu-painel titulo="{{tituloPainel}}">
       <!-- Table -->
       <table class="table table-striped table-bordered">
         <tr>
@@ -40,9 +38,9 @@
           <td>{{pessoa.nome}}</td>
           <td>{{pessoa.email}}</td>
         </tr>
-        </table>
       </table>
-    </div>      
+
+    </meu-painel>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
