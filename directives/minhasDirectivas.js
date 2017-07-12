@@ -3,10 +3,10 @@ angular.module('minhasDirectivas', [])
 
 	var ddo = {};
 
-	ddo.restric = "AE";
+	ddo.restrict = "AE";
 
 	ddo.scope = {
-		titulo  : '@tituloPainel'
+		tituloPainel  : '@titulo'
 	};
 
 	ddo.transclude = true;
