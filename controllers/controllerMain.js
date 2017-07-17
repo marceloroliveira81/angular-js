@@ -6,6 +6,8 @@ angular.module('main')
 	$scope.tituloPainel = 'Lista de Pessoas';
 	$scope.pessoas = {};
 
+	$scope.filtro = "";
+
 	$http.get('http://localhost/webservice-angular-js/lista-pessoas.json')
 	.then(function(response){
 		$scope.pessoas = response.data;
