@@ -6,7 +6,7 @@ angular.module('minhasDirectivas', [])
 	ddo.restrict = "AE";
 
 	ddo.scope = {
-		tituloPainel  : '@titulo'
+		tituloPainel : '@titulo'
 	};
 
 	ddo.transclude = true;
