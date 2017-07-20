@@ -1,0 +1,21 @@
+<h1>{{mensagem}}</h1>
+
+<form>
+  <input type="text" class="form-control" placeholder="Digite para filtrar" ng-model="filtro" ng-model-options="{debounce: 1000}">
+</form>
+
+<meu-painel titulo="{{tituloPainel}}">
+  <!-- Table -->
+  <table class="table table-striped table-bordered">
+    <tr>
+      <td>#</td>
+      <td>Nome</td>
+      <td>E-mail</td>
+    </tr>
+    <tr ng-repeat="pessoa in pessoas | filter: filtro">
+      <td>{{pessoa.id}}</td>
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.email}}</td>
+    </tr>
+  </table>
+</meu-painel>
