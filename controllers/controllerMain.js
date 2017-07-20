@@ -1,6 +1,5 @@
 angular.module('main')
 .controller('controllerMain', function($scope, $http){
-	$scope.titulo = 'Angular - Bootstrap';
 	$scope.mensagem = 'AngularJS - Bootstrap';
 
 	$scope.tituloPainel = 'Lista de Pessoas';
@@ -12,5 +11,4 @@ angular.module('main')
 	.then(function(response){
 		$scope.pessoas = response.data;
 	});
-
 });
