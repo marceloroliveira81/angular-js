@@ -1,7 +1,14 @@
 <h1>{{mensagem}}</h1>
 
 <form>
-  <input type="text" class="form-control" placeholder="Digite para filtrar" ng-model="filtro" ng-model-options="{debounce: 1000}">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">
+        <a class="btn btn-primary" href="#/principal/novo" role="button">Novo</a>
+      </div>
+      <input type="text" class="form-control" placeholder="Digite para filtrar" ng-model="filtro" ng-model-options="{debounce: 1000}">
+    </div>
+  </div>
 </form>
 
 <meu-painel titulo="{{tituloPainel}}">
