@@ -7,12 +7,16 @@ angular.module('main', ['minhasDirectivas', 'ngRoute'])
 		templateUrl : 'pages/principal.html',
 		controller : 'controllerMain'
 	})
+
+	.when('/principal/novo', {
+		templateUrl : 'pages/novo.html',
+		controller : 'controllerMain'
+	})
 	
 	.otherwise({
-		template : '<h1>Rota Padrão</h1>'
+		redirectTo : '/principal'
 	});
 
 	$locationProvider.hashPrefix('');
-	$locationProvider.html5Mode(true);
 	
 });
