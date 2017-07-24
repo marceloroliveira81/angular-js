@@ -11,4 +11,10 @@ angular.module('main')
 	.then(function(response){
 		$scope.pessoas = response.data;
 	});
+
+	$scope.pessoa = {};
+
+	$scope.enviar = function() {
+		console.log($scope.pessoa);
+	};
 });
