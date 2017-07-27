@@ -1,14 +1,18 @@
 <h1>{{mensagem}}</h1>
 <h2>{{pessoa.nome}}</h2>
 
-<form>
-  <div class="form-group">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" ng-model="pessoa.nome" class="form-control" id="nome" placeholder="Nome">
-  </div>
-  <div class="form-group">
-    <label for="email">E-mail</label>
-    <input type="email" name="email" ng-model="pessoa.email" class="form-control" id="email" placeholder="E-mail">
-  </div>
-  <button type="submit" class="btn btn-success" ng-click="enviar()">Salvar</button>
+<div ng-show="status.length" class="alert alert-info" role="alert">{{status}}</div>
+<form name="form" novalidate>	
+	<div class="form-group">
+		<label for="nome">Nome</label>
+		<input type="text" name="nome" ng-model="pessoa.nome" class="form-control" id="nome" placeholder="Nome" required>
+		<p class="alert alert-danger" role="alert" ng-show="form.$submitted && form.nome.$error.required">Nome é obrigatório</p>
+	</div>
+	<div class="form-group">
+		<label for="email">E-mail</label>
+		<input type="email" name="email" ng-model="pessoa.email" class="form-control" id="email" placeholder="E-mail" required>
+		<div class="alert alert-danger" role="alert" ng-show="form.$submitted && form.email.$error.required">E-mail é obrigatório</div>
+	</div>
+	<button type="submit" class="btn btn-success" ng-click="enviar()" n/g-disabled="form.$invalid">Salvar</button>
+	<a class="btn btn-info" href="#/principal" role="button">Voltar</a>
 </form>
