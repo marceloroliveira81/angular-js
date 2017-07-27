@@ -7,7 +7,7 @@ angular.module('main')
 
 	$scope.filtro = "";
 
-	$http.get('http://localhost/webservice-angular-js/lista-pessoas.json')
+	$http.get('http://localhost/webservice-angular-js/controller/cUsuario.php?acao=listar')
 	.then(function(response){
 		$scope.pessoas = response.data;
 	});
