@@ -32,8 +32,8 @@ angular.module('main')
 			});
 	};
 
-	$scope.excluir = function($pessoa) {
-		$http.post('http://localhost/webservice-angular-js/controller/cUsuario.php?acao=excluir', $pessoa)
+	$scope.excluir = function(pessoa) {
+		$http.post('http://localhost/webservice-angular-js/controller/cUsuario.php?acao=excluir', pessoa)
 			.then(function(response){				
 				if (response.data == 'excluido') {
 					$scope.status = 'Exclúído com sucesso';
