@@ -14,6 +14,7 @@ angular.module('main')
 		});
 
 	$scope.pessoa = {};
+	
 	$scope.status = "";
 
 	$scope.enviar = function() {
@@ -24,6 +25,24 @@ angular.module('main')
 				if (response.data == 'cadastrado') {
 					$scope.status = 'Cadastrado com sucesso';
 					$scope.pessoa = {};
+					$scope.form.$setPristine();
+					$scope.form.$setValidity();
+					$scope.form.$setUntouched();
+				}
+			});
+	};
+
+	$scope.excluir = function($pessoa) {
+		$http.post('http://localhost/webservice-angular-js/controller/cUsuario.php?acao=excluir', $pessoa)
+			.then(function(response){				
+				if (response.data == 'excluido') {
+					$scope.status = 'Exclúído com sucesso';
+
+					$http.get('http://localhost/webservice-angular-js/controller/cUsuario.php?acao=listar')
+						.then(function(response){
+							$scope.pessoas = response.data;
+						});
+
 				}
 			});
 	};
