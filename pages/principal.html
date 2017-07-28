@@ -18,11 +18,13 @@
       <td>#</td>
       <td>Nome</td>
       <td>E-mail</td>
+      <td>Ações</td>
     </tr>
     <tr ng-repeat="pessoa in pessoas | filter: filtro">
       <td>{{pessoa.id_usuario}}</td>
       <td>{{pessoa.nome}}</td>
       <td>{{pessoa.email}}</td>
+      <td><button type="button" class="btn btn-danger" ng-click="excluir(pessoa)">Excluir</button></td>
     </tr>
   </table>
 </meu-painel>
