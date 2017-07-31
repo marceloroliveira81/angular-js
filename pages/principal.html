@@ -1,5 +1,6 @@
 <h1>{{mensagem}}</h1>
 
+<div ng-show="status.length" class="alert alert-info" role="alert">{{status}}</div>
 <form>
   <div class="form-group">
     <div class="input-group">
@@ -24,7 +25,10 @@
       <td>{{pessoa.id_usuario}}</td>
       <td>{{pessoa.nome}}</td>
       <td>{{pessoa.email}}</td>
-      <td><button type="button" class="btn btn-danger" ng-click="excluir(pessoa)">Excluir</button></td>
+      <td>
+        <a class="btn btn-warning" href="#/principal/alterar/{{pessoa.id_usuario}}" role="button">Alterar</a>
+        <button type="button" class="btn btn-danger" ng-click="excluir(pessoa)">Excluir</button>
+      </td>
     </tr>
   </table>
 </meu-painel>
