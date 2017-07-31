@@ -12,6 +12,11 @@ angular.module('main', ['minhasDirectivas', 'ngRoute'])
 		templateUrl : 'pages/novo.html',
 		controller : 'controllerMain'
 	})
+
+	.when('/principal/alterar/:id_usuario', {
+		templateUrl : 'pages/novo.html',
+		controller : 'controllerMain'
+	})
 	
 	.otherwise({
 		redirectTo : '/principal'
